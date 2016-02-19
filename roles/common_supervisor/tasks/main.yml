@@ -1,0 +1,17 @@
+---
+
+- name: "Kill Supervisord"
+  become: yes
+  become_user: root
+  shell: "killall supervisord"
+  failed_when: false
+
+- name: "Start Supervisord"
+  shell: "supervisord"
+  args:
+    chdir: "{{ PRJ_REPO_PATH_MAIN }}"
+  failed_when: false
+
+- name: "Restart OSM Slack Bot"
+  supervisorctl: name={{ item }} state=restarted config="{{ SUPERVISOR_CONFIG_PATH }}"
+  with_items: "{{ SUPERVISOR_PROGRAMS }}"

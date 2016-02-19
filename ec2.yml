@@ -1,0 +1,14 @@
+---
+
+- name: Create a OSM Slack bot virtual machine via vagrant
+  hosts: all
+  remote_user: ubuntu
+  roles:
+    - common_base
+    - common_git  # Check out Git repos ~/osm-slackbot.git
+    - common_memcached
+    - common_webserver_app
+    - common_venv  # Create python virtual environment from VENV_NAME and VENV_PATH
+    - osm_slackbot  # Installs osm-slackbot requirements.txt & create local_settings.py
+    - common_editable  # Installs local osm-slackbot.git repo as editable
+    - common_supervisor # Launch the bot using supervisor!

@@ -1,0 +1,5 @@
+APP_NAME: OSM Slack bot
+APP_VERSION: 1.0
+
+REQS:
+  - "~/osm-slackbot.git/requirements.txt"

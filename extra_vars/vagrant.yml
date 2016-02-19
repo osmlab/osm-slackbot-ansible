@@ -1,0 +1,20 @@
+OS_USER: vagrant
+
+VENV_NAME: osmslackbot
+VENV_PATH: "/home/{{ OS_USER }}/.venvs/osmslackbot"
+
+PRJ_PARENT_PATH: "/home/{{ OS_USER }}"
+PRJ_REPO_NAME: osm-slackbot.git
+
+PRJ_REPO_PATH_MAIN: "/home/{{ OS_USER }}/osm-slackbot.git"
+PRJ_PKG_NAME: osmslackbot
+
+COMMON_EDITABLE_PACKAGES:  # For role "common_editable"
+  - name: osm-slackbot
+    parent: /home/vagrant
+    path: osm-slackbot.git
+
+SUPERVISOR_CONFIG_PATH: "{{ PRJ_REPO_PATH_MAIN }}/supervisord.conf"
+
+SUPERVISOR_PROGRAMS:
+  - "osmslackbot"

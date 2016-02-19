@@ -1,0 +1,15 @@
+---
+
+- name: "Install Requirements"
+  pip: "requirements={{ item }} virtualenv={{ VENV_PATH }}"
+  with_items: "{{ REQS }}"
+
+- name: "Update local_settings.py"
+  become: yes
+  become_user: "{{ OS_USER }}"
+  action: template src=templates/local_settings.py.j2 dest="{{ PRJ_REPO_PATH_MAIN }}/{{ PRJ_PKG_NAME }}/local_settings.py"
+
+- name: "Update supervisord.conf"
+  become: yes
+  become_user: "{{ OS_USER }}"
+  action: template src=templates/supervisord.conf.j2 dest="{{ PRJ_REPO_PATH_MAIN }}/supervisord.conf"

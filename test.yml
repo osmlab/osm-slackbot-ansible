@@ -1,0 +1,7 @@
+---
+
+- name: Create a OSM Slack bot virtual machine via vagrant
+  hosts: all
+  remote_user: vagrant
+  roles:
+    - osm_slackbot  # Installs osm-slackbot requirements.txt
