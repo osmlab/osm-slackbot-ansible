@@ -1,5 +1,5 @@
 ---
 
 - name: "Checkout Git Repos"
-  git: repo="{{ item.src }}" dest="{{ item.dest }}" update=yes
+  git: repo="{{ item.src }}" dest="{{ item.dest }}" update=yes force=yes
   with_items: "{{ GIT_REPOS }}"
