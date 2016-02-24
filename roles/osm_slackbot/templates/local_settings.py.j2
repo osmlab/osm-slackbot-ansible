@@ -1,3 +1,5 @@
 GEOWATCH_CONFIG = {
-    "authtoken": "{{ AUTHTOKEN }}"
+    "authtoken": "{{ SLACK_AUTHTOKEN }}"
 }
+
+GEOWATCH_STOPWORDS = {{ GEOWATCH_STOPWORDS | to_json }}

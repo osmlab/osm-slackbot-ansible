@@ -46,10 +46,14 @@ First, create a `secret.yml` [YAML](https://en.wikipedia.org/wiki/YAML) file in 
 ```
 ---
 
-AUTHTOKEN: "XXXX"
+SLACK_AUTHTOKEN: "XXXX"
 ```
 
-This token will be automatically added to a local_settings.py file on provision.
+This token will be automatically added to a local_settings.py file on provision.  The auth token is uniquely assigned to your Slack team, so no other team identifier is needed.
+
+**Stop words**
+
+You can edit your stop words, in your all.yml file.
 
 ### Vagrant
 

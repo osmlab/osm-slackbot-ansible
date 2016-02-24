@@ -3,3 +3,15 @@ APP_VERSION: 1.0
 
 REQS:
   - "~/osm-slackbot.git/requirements.txt"
+
+GEOWATCH_STOPWORDS:
+  - "nobot"
+  - "no bot"
+  - "stopbot"
+  - "stop bot"
+  - "ignorebot"
+  - "ignore bot"
+  - "skipbot"
+  - "skip bot"
+  - "!bot"
+  - "-bot"
